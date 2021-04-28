@@ -45,30 +45,30 @@ class Human(Organism):
         return msg
 
 ## ANOTHER CHILD CLASS INSTANCE
-    class Dog(Organism):
-        name = "Spot"
-        species = "Canine"
-        legs = 4
-        arms = 0
-        dna = "Sequence B"
-        origin = "Earth"
+class Dog(Organism):
+    name = "Spot"
+    species = "Canine"
+    legs = 4
+    arms = 0
+    dna = "Sequence B"
+    origin = "Earth"
 
-        def bite(self):
-            msg = "\nEmits a loud, menacing growl and bites down ferociously on its target!"
-            return msg
+    def bite(self):
+        msg = "\nEmits a loud, menacing growl and bites down ferociously on its target!"
+        return msg
 
 ## ANOTHER CHILD INSTANCE
-    class Bacterium(Organism):
-        name = "X"
-        species = "Bacteria"
-        legs = 0
-        arms = 0
-        dna = "Sequence C"
-        origin = "Mars"
+class Bacterium(Organism):
+    name = "X"
+    species = "Bacteria"
+    legs = 0
+    arms = 0
+    dna = "Sequence C"
+    origin = "Mars"
 
-        def replication(self):
-            msg = "\nThe cells begin to divide and multiply into two separate organisms!"
-    
+    def replication(self):
+        msg = "\nThe cells begin to divide and multiply into two separate organisms!"
+        return msg
             
 
 
