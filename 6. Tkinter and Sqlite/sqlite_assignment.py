@@ -26,7 +26,7 @@
 
 import sqlite3
 
-connection = sqlite3.connect("C:\Users\USER\OneDrive\Desktop\Sqlite_Assignment\test_database.db")
+connection = sqlite3.connect("C:\Users\USER\OneDrive\Documents\GitHub\Python-Projects\6. Tkinter and Sqlite\test_database.db")
 
 c = connection.cursor()
 # This line instantiates a Cursor object. A cursor is a control structure
@@ -34,7 +34,10 @@ c = connection.cursor()
 # execute commands on our SQL database 'test_database' and return the results.
 
 # Now we can easily execute regular SQL statements on the database through the cursor
-c.exeute("CREATE TABLE People(FirstName TEXT, LastName TEXT, Age INT)")
+c.execute("CREATE TABLE People(FirstName TEXT, LastName TEXT, Age INT)")
 # This line creates a new table named People and inserts three new columns into the table:
 # text for storing each person’s FirstName, another text field to store the LastName,
-# and an integer to store Age. 
+# and an integer to store Age.
+
+
+c.execute
