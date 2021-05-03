@@ -26,7 +26,7 @@
 
 import sqlite3
 
-connection = sqlite3.connect("C:\Users\USER\OneDrive\Documents\GitHub\Python-Projects\6. Tkinter and Sqlite\test_database.db")
+connection = sqlite3.connect("sqlite_assignment.db")
 
 c = connection.cursor()
 # This line instantiates a Cursor object. A cursor is a control structure
@@ -40,4 +40,3 @@ c.execute("CREATE TABLE People(FirstName TEXT, LastName TEXT, Age INT)")
 # and an integer to store Age.
 
 
-c.execute
