@@ -75,7 +75,7 @@ class ParentWindow(Frame):
         # but that class has several different things that we can use
         # to configure it. 
         self.txtFName = Entry(self.master,text=self.varFName, font=("Helvetica", 16), fg='black', bg='lightblue')
-        # So to confure the text box, the first thing you
+        # So to configure the text box, the first thing you
         # need to do is tell it where it needs to go. So we attatch it to
         # self.master ("place this entry on master")
 
