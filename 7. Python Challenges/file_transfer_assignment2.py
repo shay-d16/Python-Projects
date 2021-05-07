@@ -36,35 +36,47 @@ class ParentWindow(Frame):
         self.master.resizable(width=True, height=True)
         self.master.geometry('{}x{}'.format(900,400))
         # Making the width and height 'True' allows user to resize the window.
-        self.master.title('File Explorer')
+        self.master.title('File Transfer')
         self.master.config(bg='lightpink')
 
-        btn_browse1 = Button(text="Browse", padx=20, command=self.open_window, font=("Helvetica", 16), fg='white', bg='palevioletred')
-        btn_browse1.grid(row=0,column=0,padx=(20,10),pady=(30,0))
-        btn_browse2 = Button(text="Browse", padx=20, command=self.open_window, font=("Helvetica", 16), fg='white', bg='palevioletred')
-        btn_browse2.grid(row=1,column=0,padx=(20,10),pady=(30,0))
+        self.headerlbl = Label(text="Choose a folder to transfer:", font=("Helvetica", 16), fg='white', bg='lightpink')
+        self.headerlbl.grid(row=0,column=0,padx=(30,0),pady=(30,0))
+
+        self.btn_browse1 = Button(text="From", padx=20, command=self.open_window1, font=("Helvetica", 16), fg='white', bg='palevioletred')
+        self.btn_browse1.grid(row=2,column=0,padx=(20,10),pady=(20,0))
+        self.btn_browse2 = Button(text="To", padx=20, command=self.open_window2, font=("Helvetica", 16), fg='white', bg='palevioletred')
+        self.btn_browse2.grid(row=3,column=0,padx=(20,10),pady=(20,0))
 
 
-        dir_src = Entry(width=100)
-        dir_src.grid(row=0,column=1, padx=20, pady=(30,0))
-        dir_dst = Entry(width=100)
-        dir_dst.grid(row=1,column=1, padx=20, pady=(30,0))
+        self.btn_transfer = Button(text="Transfer", padx=20,command=self.copy_file, font=("Helvetica", 16), fg='white', bg='palevioletred')
+        self.btn_transfer.grid(row=5,column=1,padx=(20,10),pady=(20,0))
 
+        
+        self.dir_src = Entry(width=80)
+        self.dir_src.grid(row=2,column=1, padx=10, pady=(30,0))
+        self.dir_dst = Entry(width=80)
+        self.dir_dst.grid(row=3,column=1, padx=10, pady=(30,0))
 
+        
   
      
         
 
     ## FUNCTIONS
 
-    def open_window(self):
-        read = fd.askopenfile()
-        return read
+    def open_window1(self):
+        read = fd.askdirectory()
+        print(self.dir_src.insert(INSERT, read))
 
 
-        def copy_file(self):
-        source = dir_src.get()
-        destination = dir_dst.get()
+    def open_window2(self):
+        read = fd.askdirectory()
+        print(self.dir_dst.insert(INSERT, read))
+
+
+    def copy_file(self):
+        source = self.dir_src.get()
+        destination = self.dir_dst.get()
         source_files = os.listdir(source)
         for file in source_files:
             abs_path = os.path.join(source,file)
@@ -73,7 +85,9 @@ class ParentWindow(Frame):
             file_datetime = datetime.datetime.fromtimestamp(mod_time)
             if hours_ago < file_datetime:
                 shutil.copy2(source,file, destination)
-        
+                print("The new or modified files have been transfered successfully!")
+            else:
+                print("There are no new or modified files at this present time.")
        
         
         
