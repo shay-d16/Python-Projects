@@ -14,10 +14,10 @@ import shutil
 import os
 
 # Set where the source of the files are
-source = 'folderA'
+source = 'C://Users/USER/OneDrive/Documents//GitHub/Python-Projects/7. Python Challenges/folderA/'
 
 # Set the destination path to folderB
-destination = 'folderB'
+destination = 'C:/Users//USER/OneDrive/Documents/GitHub/Python-Projects/7. Python Challenges/folderB/'
 files = os.listdir(source)
 
 for i in files:

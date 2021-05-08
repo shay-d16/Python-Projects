@@ -51,6 +51,9 @@ class ParentWindow(Frame):
         self.btn_transfer = Button(text="Transfer", padx=20,command=self.copy_file, font=("Helvetica", 16), fg='white', bg='palevioletred')
         self.btn_transfer.grid(row=5,column=1,padx=(20,10),pady=(20,0))
 
+        self.msglbl = Label(text="", font=("Helvetica", 16), fg='white', bg='lightpink')
+        self.msglbl.grid(row=6,column=1,padx=(30,0),pady=(30,0))
+
         
         self.dir_src = Entry(width=80)
         self.dir_src.grid(row=2,column=1, padx=10, pady=(30,0))
@@ -84,7 +87,7 @@ class ParentWindow(Frame):
             mod_time = os.path.getmtime(abs_path)
             file_datetime = datetime.datetime.fromtimestamp(mod_time)
             if hours_ago < file_datetime:
-                shutil.copy2(source,file, destination)
+                shutil.copy2(source, destination)
                 print("The new or modified files have been transfered successfully!")
             else:
                 print("There are no new or modified files at this present time.")
