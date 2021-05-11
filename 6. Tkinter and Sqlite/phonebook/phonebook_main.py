@@ -35,7 +35,7 @@ class ParentWindow(Frame):
         self.master.protocol("WM_DELETE_WINDOW", lambda: phonebook_func.ask_quit(self))
         arg = self.master
 
-        # load in the GUI widgets froma separate module,
+        # load in the GUI widgets from a separate module,
         # keeping your code compartmentalized and clutter free
         phonebook_gui.load_gui(self)
 
