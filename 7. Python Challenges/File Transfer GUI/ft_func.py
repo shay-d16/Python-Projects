@@ -23,11 +23,10 @@ def browse(self):
         bf = tk.filedialog.askdirectory()
         return bf
 
-
+def open_file(self):
+        of = tk.filedialog.askopenfile(mode="r")
+        return of
         
-        
-        
-
 
 def edit_file(self):
         read = tk.filedialog.askopenfile(mode="a")
@@ -40,6 +39,10 @@ def callback(self):
 
 
 def check_files(self):
+    source = './CompanyFiles'
+    destination = './HomeOffice'
+    source_files = os.listdir(source)
+    dest_files = os.listdir(destination)    
     for file in source_files:
         abs_path = os.path.join(source,file)
         hours_ago = datetime.datetime.now()-timedelta(hours = 24)

@@ -10,7 +10,7 @@ import ft_func
 
 def load_gui(self):
 
-        self.browse_btn = Button(self, text="Browse", font=("Helvetica", 12), fg='white', bg='palevioletred' )
+        self.browse_btn = Button(self, text="Browse",command=lambda: ft_func.browse(self), font=("Helvetica", 12), fg='white', bg='palevioletred' )
         self.browse_btn.grid(row=0,column=0,padx=(10,0),pady=(10,0))
         self.browse_entry = Entry(self,text='',width=45)
         self.browse_entry.grid(row=0,column=1,padx=(10,0),pady=(10,0))
@@ -30,11 +30,11 @@ def load_gui(self):
 
         
         ## OPEN BUTTON
-        self.btn_open = Button(self,width=12,height=2,text="Open",fg='white', bg='palevioletred')
+        self.btn_open = Button(self,width=12,height=2,text="Open",command=lambda: ft_func.open_file(self),fg='white', bg='palevioletred')
         self.btn_open.grid(row=0,column=7,padx=(20,10),pady=(10,10),sticky=W)
 
         ## EDIT BUTTON
-        self.btn_edit = Button(self,width=12,height=2,text="Edit",fg='white', bg='palevioletred')
+        self.btn_edit = Button(self,width=12,height=2,text="Edit",command=lambda: ft_func.edit_file(self),fg='white', bg='palevioletred')
         self.btn_edit.grid(row=1,column=7,padx=(20,10),pady=(10,10),sticky=W)
 
         ## CANCEL BUTTON
@@ -42,11 +42,11 @@ def load_gui(self):
         self.btn_cancel.grid(row=2,column=7,columnspan=1,padx=(20,10),pady=(10,10),sticky=W)
 
         ## CHECK BUTTON
-        self.btn_check = Button(self,width=12,height=2,text="Check",fg='white', bg='palevioletred')
+        self.btn_check = Button(self,width=12,height=2,text="Check",command=lambda: ft_func.check_files(self), fg='white', bg='palevioletred')
         self.btn_check.grid(row=3,column=7,padx=(20,0),pady=(10,10),sticky=W)
 
         ## CLOSE BUTTON
-        self.btn_close = Button(self,width=12,height=2,text="Close",fg='white', bg='palevioletred')
+        self.btn_close = Button(self,width=12,height=2,text="Close",command=lambda: ft_func.ask_quit(self),fg='white', bg='palevioletred')
         self.btn_close.grid(row=4,column=7,columnspan=1,padx=(20,0),pady=(10,10),sticky=W)
         
 

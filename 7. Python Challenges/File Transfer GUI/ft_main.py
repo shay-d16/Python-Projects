@@ -52,9 +52,6 @@ if __name__  == "__main__":
     # call on and pass the class object 'Tk()' to instantiate it as 'win'
     App = ParentWindow(win)
     win.mainloop()
-    source = './CompanyFiles'
-    destination = './HomeOffice'
-    source_files = os.listdir(source)
-    dest_files = os.listdir(destination)
+    
     v = StringVar()
     
