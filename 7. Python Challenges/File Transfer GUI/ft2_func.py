@@ -30,7 +30,7 @@ def check_files(self):
             mod_time = os.path.getmtime(abs_path)
             file_datetime = datetime.datetime.fromtimestamp(mod_time)
             if hours_ago < file_datetime:
-                shutil.copy(source, destination)
+                shutil.copy(source+"/"+file, destination)
 
                 
 if __name__ == "__main__":
