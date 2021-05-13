@@ -21,10 +21,9 @@ def browse2(self):
     self.dir_dst.insert(0, bf)
 
 def check_files(self):
-        source = self.dir_src
-        destination = self.dir_dst
-        source_files = os.listdir(source)
-        dest_files = os.listdir(destination)    
+        source = self.dir_src.get()
+        destination = self.dir_dst.get()
+        source_files = os.listdir(source)    
         for file in source_files:
             abs_path = os.path.join(source,file)
             hours_ago = datetime.datetime.now()-timedelta(hours = 24)
@@ -32,9 +31,7 @@ def check_files(self):
             file_datetime = datetime.datetime.fromtimestamp(mod_time)
             if hours_ago < file_datetime:
                 shutil.copy(source, destination)
-                messagebox.showinfo("The new or modified files have been transfered successfully!")
-            else:
-                messagebox.showinfo("There are no new or modified files at this present time.")
-           
+
+                
 if __name__ == "__main__":
     pass
